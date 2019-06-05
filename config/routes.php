@@ -163,6 +163,10 @@ $app->group('/user', function () {
     //Reconstructed Payment System
     $this->post('/payment/purchase', 'App\Services\Payment:purchase');
     $this->get('/payment/return', 'App\Services\Payment:returnHTML');
+	
+    // Crypto Payment - BTC, ETH, EOS, BCH, LTC etch
+    $this->post('/payment/bitpay/purchase', App\Services\BitPayment::class . ':purchase');
+    $this->get('/payment/bitpay/return', App\Services\BitPayment::class . ':returnHTML');
 })->add(new Auth());
 
 $app->group('/payment', function () {
