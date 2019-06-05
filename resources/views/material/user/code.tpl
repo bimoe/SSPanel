@@ -55,7 +55,19 @@
                         </div>
                     </div>
                 {/if}
-
+		
+                {if $bitpay!=''}
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card margin-bottom-no">
+                            <div class="card-main">
+                                <div class="card-inner">
+                                    {$bitpay}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {/if}
+		
                 <div class="col-lg-12 col-md-12">
                     <div class="card margin-bottom-no">
                         <div class="card-main">
