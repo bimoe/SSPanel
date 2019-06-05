@@ -165,14 +165,17 @@ $app->group('/user', function () {
     $this->get('/payment/return', 'App\Services\Payment:returnHTML');
 	
     // Crypto Payment - BTC, ETH, EOS, BCH, LTC etch
-    $this->post('/payment/bitpay/purchase', App\Services\BitPayment::class . ':purchase');
-    $this->get('/payment/bitpay/return', App\Services\BitPayment::class . ':returnHTML');
+    $this->post('/payment/bitpay/purchase', 'App\Services\BitPayment:purchase');
+    $this->get('/payment/bitpay/return', 'App\Services\BitPayment:returnHTML');
 })->add(new Auth());
 
 $app->group('/payment', function () {
     $this->post('/notify', 'App\Services\Payment:notify');
     $this->post('/notify/{type}', 'App\Services\Payment:notify');
     $this->post('/status', 'App\Services\Payment:getStatus');
+	
+    $this->post('/bitpay/notify', 'App\Services\BitPayment:notify');
+    $this->post('/bitpay/status', 'App\Services\BitPayment:getStatus');
 });
 
 // Auth
