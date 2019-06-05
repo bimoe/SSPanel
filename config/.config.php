@@ -165,7 +165,7 @@ $System_Config['enable_checkin_captcha'] = 'false';	//启用签到验证码
 
 
 //支付系统设置----------------------------------------------------------------------------------------
-#取值 none | codepay | trimepay | f2fpay | chenAlipay | paymentwall | spay | tomatopay | flyfoxpay | bitpay
+#取值 none | codepay | trimepay | f2fpay | chenAlipay | paymentwall | spay | tomatopay | flyfoxpay
 $System_Config['payment_system']='none';
 
 #番茄云支付 https://b.fanqieui.com/
