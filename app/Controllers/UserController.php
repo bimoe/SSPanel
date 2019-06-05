@@ -15,6 +15,7 @@ use App\Models\Bought;
 use App\Models\Ticket;
 use App\Services\Config;
 use App\Services\Gateway\ChenPay;
+use App\Services\BitPayment;
 use App\Services\Payment;
 use App\Utils;
 use App\Utils\AliPay;
@@ -118,7 +119,7 @@ class UserController extends BaseController
         }
         $codes = Code::where('type', '<>', '-2')->where('userid', '=', $this->user->id)->orderBy('id', 'desc')->paginate(15, ['*'], 'page', $pageNum);
         $codes->setPath('/user/code');
-        return $this->view()->assign('codes', $codes)->assign('pmw', Payment::purchaseHTML())->display('user/code.tpl');
+        return $this->view()->assign('codes', $codes)->assign('pmw', Payment::purchaseHTML())->assign('bitpay', BitPayment::purchaseHTML())->display('user/code.tpl');
     }
 
     public function orderDelete($request, $response, $args)
