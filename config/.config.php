@@ -186,7 +186,7 @@ $System_Config['tomatopay']= [
 $System_Config['flyfoxpay']=['config'=>['hid'=>'******','key'=>'********','mail'=>'*******@****.***']];	
 
 # bitpay https://merchants.mugglepay.com/
-$System_Config['bitpay_secret']='XXXX';
+$System_Config['bitpay_secret']='';
 
 #codepay码支付
 #wiki地址:https://goo.gl/dRwRDi  http://t.cn/RnsWjtB
