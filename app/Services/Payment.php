@@ -10,7 +10,7 @@ namespace App\Services;
 
 use App\Services\Config;
 use App\Services\Gateway\{
-    AopF2F, Codepay, DoiAMPay, PaymentWall, ChenPay, SPay, TrimePay, TomatoPay, FlyfoxPay, BitPay
+    AopF2F, Codepay, DoiAMPay, PaymentWall, ChenPay, SPay, TrimePay, TomatoPay, FlyfoxPay
 };
 
 class Payment
@@ -36,8 +36,6 @@ class Payment
                 return new TomatoPay();
 	        case("flyfoxpay"):
                 return new FlyfoxPay();
-            case("bitpay"):
-                return new BitPay(Config::get('bitpay_secret'));
             default:
                 return NULL;
         }
