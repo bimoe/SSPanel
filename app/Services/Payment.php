@@ -32,9 +32,9 @@ class Payment
                 return new ChenPay();
             case("trimepay"):
                 return new TrimePay(Config::get('trimepay_secret'));
-	        case("tomatopay"):
+	    case("tomatopay"):
                 return new TomatoPay();
-	        case("flyfoxpay"):
+	    case("flyfoxpay"):
                 return new FlyfoxPay();
             default:
                 return NULL;
